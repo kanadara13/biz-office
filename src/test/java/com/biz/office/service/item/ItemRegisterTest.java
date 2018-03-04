@@ -22,7 +22,7 @@ public class ItemRegisterTest {
 
     @Before
     public void setUp() throws Exception {
-        register = new ItemManager(repository);
+        register = new ItemManager(repository, componentRepository);
     }
 
     @Test
