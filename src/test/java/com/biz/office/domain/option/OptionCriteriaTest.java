@@ -35,9 +35,9 @@ public class OptionCriteriaTest {
     public void findAll() {
         List<Option> optionList = repository.findAll();
         optionList.forEach(e->{
-            e.getItems().forEach(item -> {
+           /* e.getItems().forEach(item -> {
                 System.out.println(item.getName());
-            });
+            });*/
         });
     }
 
@@ -55,9 +55,9 @@ public class OptionCriteriaTest {
     @Test
     public void findOne() {
         Option aOption = repository.findOne(1L);
-        aOption.getItems().forEach(e->{
+     /*   aOption.getItems().forEach(e->{
             System.out.println(e.getName());
-        });
+        });*/
     }
 
     @Test
@@ -117,9 +117,9 @@ public class OptionCriteriaTest {
         }, pageable);
         options.forEach(e->{
             System.out.println(e.getName());
-            e.getItems().forEach(item -> {
+           /* e.getItems().forEach(item -> {
                 System.out.println(item.getName());
-            });
+            });*/
         });
     }
 }

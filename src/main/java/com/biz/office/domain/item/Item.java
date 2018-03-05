@@ -1,10 +1,11 @@
 package com.biz.office.domain.item;
 
-import com.biz.office.domain.option.Option;
 import com.biz.office.domain.price.Price;
 import com.biz.office.domain.base.BaseDomain;
+import com.google.common.collect.Lists;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Item extends BaseDomain {
@@ -15,26 +16,15 @@ public class Item extends BaseDomain {
     @Embedded
     private Price price;
 
-    @Column(insertable = false, updatable = false)
-    private Long optionId;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<ItemComponent> itemComponents = Lists.newArrayList();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Option option;
-
-    public Option getOption() {
-        return option;
+    public List<ItemComponent> getItemComponents() {
+        return itemComponents;
     }
 
-    public void setOption(Option option) {
-        this.option = option;
-    }
-
-    public Long getOptionId() {
-        return optionId;
-    }
-
-    public void setOptionId(Long optionId) {
-        this.optionId = optionId;
+    public void setItemComponents(List<ItemComponent> itemComponents) {
+        this.itemComponents = itemComponents;
     }
 
     public String getName() {
