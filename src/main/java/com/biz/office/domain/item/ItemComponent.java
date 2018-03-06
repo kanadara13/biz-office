@@ -4,9 +4,7 @@ import com.biz.office.domain.base.BaseDomain;
 import com.biz.office.domain.material.Material;
 import com.google.common.collect.Lists;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -18,20 +16,31 @@ public class ItemComponent extends BaseDomain {
     @Column(insertable = false, updatable = false)
     private Long materialId;
 
-    @ManyToMany
-    private List<Material> materials = Lists.newArrayList();
+   /* @ManyToOne(fetch = FetchType.LAZY)
+    private Item item;
 
-    public void setMaterials(List<Material> materials) {
-        this.materials = materials;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Material material;
+
+    public Item getItem() {
+        return item;
     }
 
-    public List<Material> getMaterials() {
-        return materials;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
-    public Long getItemId() {
-        return itemId;
+    public Material getMaterial() {
+        return material;
     }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+*/
+   public Long getItemId() {
+       return itemId;
+   }
 
     public void setItemId(Long itemId) {
         this.itemId = itemId;

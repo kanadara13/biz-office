@@ -1,5 +1,6 @@
 package com.biz.office.domain.item;
 
+import com.biz.office.domain.option.OptionComponent;
 import com.biz.office.domain.price.Price;
 import com.biz.office.domain.base.BaseDomain;
 import com.google.common.collect.Lists;
@@ -16,8 +17,21 @@ public class Item extends BaseDomain {
     @Embedded
     private Price price;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "itemId")
+    private List<OptionComponent> optionComponents = Lists.newArrayList();
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "itemId")
     private List<ItemComponent> itemComponents = Lists.newArrayList();
+
+    public List<OptionComponent> getOptionComponents() {
+        return optionComponents;
+    }
+
+    public void setOptionComponents(List<OptionComponent> optionComponents) {
+        this.optionComponents = optionComponents;
+    }
 
     public List<ItemComponent> getItemComponents() {
         return itemComponents;

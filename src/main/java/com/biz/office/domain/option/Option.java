@@ -20,13 +20,18 @@ public class Option extends BaseDomain {
     @Embedded
     private Price price;
 
- /*   @Fetch(FetchMode.SUBSELECT)
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "option")
-    private List<Item> items  = Lists.newArrayList();
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "optionId")
+    private List<OptionComponent> components = Lists.newArrayList();
 
-    public List<Item> getItems() {
-        return items;
-    }*/
+    public List<OptionComponent> getComponents() {
+        return components;
+    }
+
+    public void setComponents(List<OptionComponent> components) {
+        this.components = components;
+    }
 
     public String getName() {
         return name;
