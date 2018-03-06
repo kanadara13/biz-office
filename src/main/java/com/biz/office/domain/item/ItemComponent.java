@@ -10,14 +10,24 @@ import java.util.List;
 @Entity
 public class ItemComponent extends BaseDomain {
 
-    @Column(insertable = false, updatable = false)
+    @Column
     private Long itemId;
 
-    @Column(insertable = false, updatable = false)
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    /*
+
+*/
+    @Column
     private Long materialId;
 
-   /* @ManyToOne(fetch = FetchType.LAZY)
-    private Item item;
+   /*
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Material material;
@@ -38,14 +48,8 @@ public class ItemComponent extends BaseDomain {
         this.material = material;
     }
 */
-   public Long getItemId() {
-       return itemId;
-   }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
+ /*
+*/
     public Long getMaterialId() {
         return materialId;
     }
