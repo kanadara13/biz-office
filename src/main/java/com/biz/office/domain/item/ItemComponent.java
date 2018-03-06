@@ -13,6 +13,9 @@ public class ItemComponent extends BaseDomain {
     @Column
     private Long itemId;
 
+    @Column
+    private Long materialId;
+
     public Long getItemId() {
         return itemId;
     }
@@ -21,40 +24,8 @@ public class ItemComponent extends BaseDomain {
         this.itemId = itemId;
     }
 
-    /*
+    public Long getMaterialId() { return materialId; }
 
-*/
-    @Column
-    private Long materialId;
+    public void setMaterialId(Long materialId) { this.materialId = materialId; }
 
-   /*
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Material material;
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
-    }
-*/
- /*
-*/
-    public Long getMaterialId() {
-        return materialId;
-    }
-
-    public void setMaterialId(Long materialId) {
-        this.materialId = materialId;
-    }
 }

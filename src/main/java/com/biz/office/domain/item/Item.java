@@ -17,21 +17,21 @@ public class Item extends BaseDomain {
     @Embedded
     private Price price;
 
-    /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, )
-    @JoinColumn(name = "itemId")
-    private List<OptionComponent> optionComponents = Lists.newArrayList();*/
-
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "itemId",insertable = false, updatable = false)
+    @JoinColumn(name = "itemId", insertable = false, updatable = false)
     private List<ItemComponent> itemComponents = Lists.newArrayList();
 
-    /*public List<OptionComponent> getOptionComponents() {
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "itemId", insertable = false, updatable = false)
+    private List<OptionComponent> optionComponents = Lists.newArrayList();
+
+    public List<OptionComponent> getOptionComponents() {
         return optionComponents;
     }
 
     public void setOptionComponents(List<OptionComponent> optionComponents) {
         this.optionComponents = optionComponents;
-    }*/
+    }
 
     public List<ItemComponent> getItemComponents() {
         return itemComponents;

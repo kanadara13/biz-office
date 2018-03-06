@@ -10,35 +10,12 @@ import java.util.List;
 @Entity
 public class OptionComponent extends BaseDomain {
 
-    @Column(insertable = false, updatable = false)
+    @Column
     private Long itemId;
 
-    @Column(insertable = false, updatable = false)
+    @Column
     private Long optionId;
 
-  /*  @ManyToOne
-    private Item item;
-
-    @ManyToOne
-    private Option option;
-
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public Option getOption() {
-        return option;
-    }
-
-    public void setOption(Option option) {
-        this.option = option;
-    }
-*/
     public Long getItemId() {
         return itemId;
     }

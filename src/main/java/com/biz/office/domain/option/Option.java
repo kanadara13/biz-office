@@ -1,7 +1,6 @@
 package com.biz.office.domain.option;
 
 import com.biz.office.domain.base.BaseDomain;
-import com.biz.office.domain.item.Item;
 import com.biz.office.domain.price.Price;
 import com.google.common.collect.Lists;
 import org.hibernate.annotations.Fetch;
@@ -22,7 +21,7 @@ public class Option extends BaseDomain {
 
     @Fetch(FetchMode.SUBSELECT)
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "optionId")
+    @JoinColumn(name = "optionId", insertable = false, updatable = false)
     private List<OptionComponent> components = Lists.newArrayList();
 
     public List<OptionComponent> getComponents() {
