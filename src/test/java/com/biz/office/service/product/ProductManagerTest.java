@@ -1,16 +1,11 @@
 package com.biz.office.service.product;
 
 import com.biz.office.domain.channel.Channel;
-import com.biz.office.domain.item.Item;
-import com.biz.office.domain.item.ItemComponent;
 import com.biz.office.domain.price.Price;
 import com.biz.office.domain.product.Product;
 import com.biz.office.domain.product.ProductComponent;
-import com.biz.office.repository.item.ItemComponentRepository;
-import com.biz.office.repository.item.ItemRepository;
 import com.biz.office.repository.product.ProductComponentRepository;
 import com.biz.office.repository.product.ProductRepository;
-import com.biz.office.service.item.ItemManager;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
