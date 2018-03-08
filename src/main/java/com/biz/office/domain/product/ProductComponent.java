@@ -2,6 +2,7 @@ package com.biz.office.domain.product;
 
 import com.biz.office.domain.base.BaseDomain;
 import com.biz.office.domain.option.Option;
+import com.biz.office.domain.price.Price;
 
 import javax.persistence.*;
 
@@ -14,9 +15,20 @@ public class ProductComponent extends BaseDomain {
     @Column
     private Long optionId;
 
+    @Embedded
+    private Price price;
+
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id", insertable = false, updatable = false, nullable = false)
     private Option option;
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
 
     public Option getOption() {
         return option;

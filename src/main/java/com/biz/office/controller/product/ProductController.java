@@ -1,6 +1,5 @@
 package com.biz.office.controller.product;
 
-import com.biz.office.domain.channel.Channel;
 import com.biz.office.domain.product.Product;
 import com.biz.office.domain.response.ApiResponse;
 import com.biz.office.service.product.ProductService;
