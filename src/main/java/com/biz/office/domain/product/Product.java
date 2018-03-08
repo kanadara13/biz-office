@@ -1,6 +1,7 @@
 package com.biz.office.domain.product;
 
 import com.biz.office.domain.base.BaseDomain;
+import com.biz.office.domain.channel.Channel;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -13,6 +14,10 @@ public class Product extends BaseDomain {
     @Column
     private String name;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private Channel channel;
+
     @Column
     private String channelProductId;
 
@@ -20,6 +25,14 @@ public class Product extends BaseDomain {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId", insertable = false, updatable = false)
     private List<ProductComponent> components;
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    public void setChannel(Channel channel) {
+        this.channel = channel;
+    }
 
     public List<ProductComponent> getComponents() {
         return components;
