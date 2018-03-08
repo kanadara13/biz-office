@@ -17,7 +17,7 @@ public class OptionComponent extends BaseDomain {
 
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id", insertable = false, updatable = false, nullable = false)
     private Item item;
 
     @Column

@@ -16,6 +16,18 @@ public class ItemComponent extends BaseDomain {
     @Column
     private Long materialId;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id", insertable = false, updatable = false, nullable = false)
+    private Material material;
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
     public Long getItemId() {
         return itemId;
     }
