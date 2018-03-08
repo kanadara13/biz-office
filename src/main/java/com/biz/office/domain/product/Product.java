@@ -15,7 +15,7 @@ public class Product extends BaseDomain {
     private String name;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "channel_id",updatable = false)
+    @JoinColumn(name = "channel_id")
     private Channel channel;
 
     @Column
