@@ -3,6 +3,7 @@ package com.biz.office.service.channel;
 import com.biz.office.domain.channel.Channel;
 import com.biz.office.repository.channel.ChannelRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 
@@ -16,6 +17,7 @@ public class ChannelManager {
         this.repository = repository;
     }
 
+    @Transactional
     public Channel save(Channel channel) {
         return repository.save(channel);
     }

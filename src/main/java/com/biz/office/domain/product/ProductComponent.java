@@ -1,11 +1,12 @@
 package com.biz.office.domain.product;
 
+import com.biz.office.domain.base.BaseDomain;
 import com.biz.office.domain.option.Option;
 
 import javax.persistence.*;
 
 @Entity
-public class ProductComponent {
+public class ProductComponent extends BaseDomain {
 
     @Column
     private Long productId;
