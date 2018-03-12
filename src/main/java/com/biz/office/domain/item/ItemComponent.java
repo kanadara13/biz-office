@@ -20,6 +20,28 @@ public class ItemComponent extends BaseDomain {
     @JoinColumn(name = "id", insertable = false, updatable = false, nullable = false)
     private Material material;
 
+    @Column
+    private String consumption;
+
+    @Column
+    private String consumptionUnit;
+
+    public String getConsumption() {
+        return consumption;
+    }
+
+    public void setConsumption(String consumption) {
+        this.consumption = consumption;
+    }
+
+    public String getConsumptionUnit() {
+        return consumptionUnit;
+    }
+
+    public void setConsumptionUnit(String consumptionUnit) {
+        this.consumptionUnit = consumptionUnit;
+    }
+
     public Material getMaterial() {
         return material;
     }
