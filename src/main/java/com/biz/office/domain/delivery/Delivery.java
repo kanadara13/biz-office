@@ -9,24 +9,24 @@ import javax.persistence.*;
 public class Delivery extends BaseDomain {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrderComponent orderDetail;
+    private OrderComponent orderComponent;
 
     @Column
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
 
     @Column
-    private String deliveryCompanyId;
+    private String companyId;
 
     @Column
     private String externalId;
 
-    public OrderComponent getOrderDetail() {
-        return orderDetail;
+    public OrderComponent getOrderComponent() {
+        return orderComponent;
     }
 
-    public void setOrderDetail(OrderComponent orderDetail) {
-        this.orderDetail = orderDetail;
+    public void setOrderComponent(OrderComponent orderComponent) {
+        this.orderComponent = orderComponent;
     }
 
     public DeliveryStatus getStatus() {
@@ -37,12 +37,12 @@ public class Delivery extends BaseDomain {
         this.status = status;
     }
 
-    public String getDeliveryCompanyId() {
-        return deliveryCompanyId;
+    public String getCompanyId() {
+        return companyId;
     }
 
-    public void setDeliveryCompanyId(String deliveryCompanyId) {
-        this.deliveryCompanyId = deliveryCompanyId;
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     public String getExternalId() {
