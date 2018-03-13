@@ -19,15 +19,15 @@ public class Order extends BaseDomain {
     @JoinColumn(name = "channel_id")
     private Channel channel;
 
+    @Fetch(FetchMode.SUBSELECT)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
+    private List<OrderComponent> details;
+
     @Column
     private LocalDateTime purchasedAt;
 
     @Column
     private String channelOrderId;
-
-    @Fetch(FetchMode.SUBSELECT)
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
-    private List<OrderDetail> details;
 
     @Column
     private int paymentAmount;
@@ -40,11 +40,11 @@ public class Order extends BaseDomain {
         this.paymentAmount = paymentAmount;
     }
 
-    public List<OrderDetail> getDetails() {
+    public List<OrderComponent> getDetails() {
         return details;
     }
 
-    public void setDetails(List<OrderDetail> details) {
+    public void setDetails(List<OrderComponent> details) {
         this.details = details;
     }
 
