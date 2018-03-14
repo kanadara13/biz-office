@@ -2,10 +2,10 @@ package com.biz.office.controller.order;
 
 import com.biz.office.domain.order.Order;
 import com.biz.office.domain.response.ApiResponse;
+import com.biz.office.service.order.OrderCriteria;
 import com.biz.office.service.order.OrderService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 
@@ -24,4 +24,13 @@ public class OrderController {
         return ApiResponse.ok(service.save(order));
     }
 
+    @GetMapping("/v1/order")
+    public ApiResponse find(OrderCriteria criteria, Pageable pageable){
+        return ApiResponse.ok(service.find(criteria, pageable));
+    }
+
+    /*@GetMapping("/v1/order/")
+    public ApiResponse find(OrderCriteria criteria, Pageable pageable){
+        return ApiResponse.ok(service.find(criteria, pageable));
+    }*/
 }
