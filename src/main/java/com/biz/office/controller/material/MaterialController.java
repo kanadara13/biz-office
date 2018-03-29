@@ -5,14 +5,12 @@ import com.biz.office.domain.material.Material;
 import com.biz.office.domain.response.ApiResponse;
 import com.biz.office.service.material.MaterialService;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 
 @RestController
+@CrossOrigin
 public class MaterialController {
 
     private MaterialService service;

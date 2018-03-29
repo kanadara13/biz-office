@@ -15,8 +15,8 @@ public class OrderService {
     private OrderManager   manager;
 
     @Inject
-    public OrderService(OrderGenerator generator, OrderCriteria orderCriteria, OrderManager orderManager) {
-        this.generator = generator;
+    public OrderService(OrderGenerator orderGenerator, OrderCriteria orderCriteria, OrderManager orderManager) {
+        this.generator = orderGenerator;
         this.criteria = orderCriteria;
         this.manager = orderManager;
     }
@@ -28,4 +28,5 @@ public class OrderService {
     public Page<Order> find(OrderCriteria criteria, Pageable pageable) {
         return criteria.find(criteria, pageable);
     }
+
 }

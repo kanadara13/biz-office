@@ -48,4 +48,5 @@ dependencies {
 	compile('com.zaxxer:HikariCP')
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("org.springframework.boot:spring-boot-devtools")
 }

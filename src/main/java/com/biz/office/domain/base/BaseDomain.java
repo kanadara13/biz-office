@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @DynamicInsert
 @DynamicUpdate
@@ -43,12 +44,20 @@ public class BaseDomain {
         return createdAt;
     }
 
+    public String getCreatedAtToString() {
+        return LocalDateTime.from(getCreatedAt()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public String getUpdatedAtToString() {
+        return LocalDateTime.from(getUpdatedAt()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {

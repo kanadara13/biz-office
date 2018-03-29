@@ -13,7 +13,7 @@ public class OrderComponent extends BaseDomain {
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "orderDetail")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "orderComponent")
     private List<Delivery> deliveries;
 
     @Column
